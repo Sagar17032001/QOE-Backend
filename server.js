@@ -16,11 +16,9 @@ app.use("/api/users", userRoutes);
 
 // MongoDB connection
 const MONGO_URI = "mongodb+srv://sagarsamrat1703_db_user:ll2DRIKiirCO2Jkr@qoeresult.5ex3zoh.mongodb.net/";
-mongoose.connect(process.env.MONGO_URI, {
-  serverSelectionTimeoutMS: 30000
-})
-.then(() => console.log("Connected to MongoDB from Vercel!"))
-.catch((err) => console.error("MongoDB connection error:", err));
+mongoose.connect(MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected successfully!");
 
     // // Test saving a dummy record
     // const TestResult = require("./models/TestResult");
@@ -28,7 +26,7 @@ mongoose.connect(process.env.MONGO_URI, {
     // test.save()
     //   .then(() => console.log("Test record saved!"))
     //   .catch(err => console.error("Save error:", err));
-
+    
   })
   .catch(err => console.error("MongoDB connection error:", err));
 
