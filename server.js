@@ -14,8 +14,6 @@ app.use(bodyParser.json());
 const userRoutes = require("./routes/users");
 app.use("/api/users", userRoutes);
 
-const siteTests = require("./routes/siteTests");
-app.use("/api/tests", siteTests);
 
 // MongoDB connection
 const MONGO_URI = "mongodb+srv://sagarsamrat1703_db_user:ll2DRIKiirCO2Jkr@qoeresult.5ex3zoh.mongodb.net/";
